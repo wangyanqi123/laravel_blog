@@ -10,7 +10,15 @@
 <!--<![endif]-->
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title>@yield('title', '首页') - {{ $cfg->title }}</title>
+	<title>
+		{{--@yield('title', '首页') - --}}
+		@if(substr($_SERVER['REMOTE_ADDR'],0,10) == '116.231.91')
+			王延琦技术博客后台
+			@else
+			$cfg->title
+			@endif
+		{{--{{ $cfg->title }}--}}
+	</title>
 	<meta name="keywords" content="{{ $cfg->keyword }}"/>
 	<meta name="description" content="{{ $cfg->description }}" />
 	<link rel="stylesheet" id="twentytwelve-style-css" href="{{ asset('front/css/index.css') }}" type="text/css" media="all" />
