@@ -31,8 +31,7 @@ class BaseController extends Controller
 	protected function __init()
 	{
 		//系统配置
-		$cfg = Setting::getAll();
-dd($cfg);
+		$cfg = (object)Setting::getAll();
 		//导航
 		$navs = Category::where('status', 1)->orderBy('sort', 'desc')->get();
 		$level = new Level;
