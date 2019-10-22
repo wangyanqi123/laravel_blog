@@ -22,7 +22,9 @@ use Illuminate\Support\Facades\View;
 class BaseController extends Controller
 {
 	//构造函数
-11
+22
+r
+
 	public function __construct()
 	{
 		$this->__init();
