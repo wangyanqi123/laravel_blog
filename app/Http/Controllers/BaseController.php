@@ -22,7 +22,6 @@ use Illuminate\Support\Facades\View;
 class BaseController extends Controller
 {
 	//构造函数
-11
 	public function __construct()
 	{
 		$this->__init();
