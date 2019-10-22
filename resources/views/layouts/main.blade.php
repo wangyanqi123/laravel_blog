@@ -37,7 +37,7 @@
 	<script type="text/javascript" src="{{ asset('front/js/nav.js') }}"></script>
 </head>
 
-<body class="home blog custom-background custom-font-enabled single-author" background="http://www.wangyanqi.cc/bg.jpg">
+<body class="home blog custom-background custom-font-enabled single-author" background="http://www.wangyanqi.cc/bg.jpg" style="background-position: center top;background-repeat: repeat-x;">
 
 <div id="page" class="hfeed site">
 
