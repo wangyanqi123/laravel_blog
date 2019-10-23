@@ -36,7 +36,7 @@ class IndexController extends BaseController
 	{
 		$categorys = Category::all();
 		$childs_id_arr = $level->formatChild($categorys, $category->id);
-		$list = Post::where('status', 1)->whereIn('category_id', $childs_id_arr)->orderBy('id', 'desc')->paginate(10);
+		$list = Article::where('status', 1)->whereIn('category_id', $childs_id_arr)->orderBy('id', 'desc')->paginate(10);
 
 		return view('index.category', ['list'=>$list, 'category'=>$category]);
 	}
