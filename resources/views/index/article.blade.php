@@ -3,6 +3,16 @@
 @section('title', $post->title)
 {{--.' - '.$post->category->name--}}
 @section('content')
+	<style>
+		pre{
+			white-space:pre-wrap; /* css3.0 */
+			white-space:-moz-pre-wrap; /* Firefox */
+			white-space:-pre-wrap; /* Opera 4-6 */
+			white-space:-o-pre-wrap; /* Opera 7 */
+			word-wrap:break-word; /* Internet Explorer 5.5+ */
+		}
+	</style>
+
 	<article>
 		<header class="entry-header">
 			<h1 class="entry-title"><a href="{{ $post->getLinkUrl() }}" title="{{ $post->title }}" rel="bookmark">{{ $post->title }}</a></h1>
