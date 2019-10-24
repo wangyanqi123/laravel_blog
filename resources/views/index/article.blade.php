@@ -1,6 +1,6 @@
 
 @extends('layouts.main')
-@section('title', $post->title - 王延琦技术博客)
+@section('title', $post->title." - 王延琦技术博客")
 {{--.' - '.$post->category->name--}}
 @section('content')
 	<style>
