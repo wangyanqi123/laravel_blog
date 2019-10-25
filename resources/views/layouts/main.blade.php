@@ -21,6 +21,7 @@
 	</title>
 	<meta name="keywords" content="{{ $cfg->keyword }}"/>
 	<meta name="description" content="{{ $cfg->description }}" />
+    <meta name="baidu-site-verification" content="Y8TgETSn73" />
 	<link rel="stylesheet" id="twentytwelve-style-css" href="{{ asset('front/css/index.css') }}" type="text/css" media="all" />
 	<!--[if lt IE 9]>
 	<link rel="stylesheet" id="twentytwelve-ie-css"  href="{{ asset('front/css/ie.css') }}" type="text/css" media="all" />
