@@ -30,13 +30,7 @@
 	<style type="text/css" id="custom-background-css">
 		body.custom-background {background-color: #e6e6e6; }
 	</style>
-
-	<!--[if lt IE 9]>
-	<script src="{{ asset('front/js/html5.js') }}" type="text/javascript"></script>
-	<![endif]-->
-	<script type="text/javascript" src="{{ asset('front/js/jquery.js') }}"></script>
-	<script type="text/javascript" src="{{ asset('front/js/nav.js') }}"></script>
-	<script>
+    <script>
         var _hmt = _hmt || [];
         (function() {
             var hm = document.createElement("script");
@@ -44,8 +38,12 @@
             var s = document.getElementsByTagName("script")[0];
             s.parentNode.insertBefore(hm, s);
         })();
-	</script>
-
+    </script>
+	<!--[if lt IE 9]>
+	<script src="{{ asset('front/js/html5.js') }}" type="text/javascript"></script>
+	<![endif]-->
+	<script type="text/javascript" src="{{ asset('front/js/jquery.js') }}"></script>
+	<script type="text/javascript" src="{{ asset('front/js/nav.js') }}"></script>
 </head>
 
 <body class="home blog custom-background custom-font-enabled single-author" background="http://www.wangyanqi.cc/bg.jpg" style="background-position: center top;background-repeat: repeat-x;">
