@@ -36,6 +36,16 @@
 	<![endif]-->
 	<script type="text/javascript" src="{{ asset('front/js/jquery.js') }}"></script>
 	<script type="text/javascript" src="{{ asset('front/js/nav.js') }}"></script>
+	<script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?9e4d9aa8dcb1ab93b9f6daf465ebeef5";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+	</script>
+
 </head>
 
 <body class="home blog custom-background custom-font-enabled single-author" background="http://www.wangyanqi.cc/bg.jpg" style="background-position: center top;background-repeat: repeat-x;">
