@@ -49,7 +49,7 @@ class BaseController extends Controller
 
 		//友链
 		$links = Link::getAll();
-		
+
 		View()->share(['cfg'=> $cfg, 'navs'=> $navs, 'hot_posts'=> $hot_posts, 'recent_posts'=> $recent_posts, 'files'=> $files, 'tags'=> $tags, 'links'=> $links]);
 	}
 }

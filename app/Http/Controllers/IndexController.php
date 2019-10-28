@@ -19,6 +19,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Redis;
 use App\Common\Tools\MarkDowner;
+
 class IndexController extends BaseController
 {
 	//首页
@@ -30,7 +31,7 @@ class IndexController extends BaseController
 		$list = Article::getRecent();
 		return view('index.index', ['list'=> $list]);
 	}
-	
+
 	//列表
 	public function category(Category $category, Level $level)
 	{
@@ -41,15 +42,42 @@ class IndexController extends BaseController
 		return view('index.category', ['list'=>$list, 'category'=>$category]);
 	}
 
-	//详情
-	public function article(Article $article)
-	{
+    //详情
+    public function article(Article $article)
+    {
         $markdown = new MarkDowner; //实例化
         $article->content = $markdown->convertMarkdownToHtml($article->content); //markdown转换html
         Article::where('id', $article->id)->increment('views');
-		return view('index.article', ['post'=> $article, 'comments' => $article->comments()->with('member')->where('status', 1)->get()]);
-	}
-	
+        return view('index.article', ['post'=> $article, 'comments' => $article->comments()->with('member')->where('status', 1)->get()]);
+    }
+
+    /*public function article($id)
+    {
+        /*echo "mysql开始时间<br/>";
+        echo(microtime());
+        echo "<br/>";
+        echo "<img src='http://www.wangyanqi.cc/bg.jpg'>";
+        echo "mysql结束时间<br/>";
+        echo(microtime());
+        exit;*/
+        /*echo "mysql开始时间<br/>";
+        echo(microtime());
+        echo "<br/>";
+        $article = Article::where('id', $id)->first();
+        echo $article->content;
+        echo "<br/>";
+        echo "mysql结束时间<br/>";
+        echo(microtime());
+        echo "redis开始时间<br/>";
+        echo(microtime());
+        echo "<br/>";
+        $redis = Redis::get('article_9');
+        print_r(json_decode($redis,true)['content']);
+        echo "<br/>";
+        echo "rerdis结束时间<br/>";
+        echo(microtime());exit;
+    }*/
+
 	//评论
 	public function comment(Post $post, CommentRequest $request)
 	{
@@ -60,7 +88,7 @@ class IndexController extends BaseController
 		if(Cache::get($cache_key)) {
 			return redirect()->back()->with('danger', '评论的间隔时间太短');
 		}
-		
+
 		Comment::create([
 			'user_id' => $user->id,
 			'post_id' => $post->id,
@@ -71,10 +99,10 @@ class IndexController extends BaseController
 			'status' => 1
 		]);
 		Cache::put($cache_key, 'short', 1);
-		
+
 		return redirect()->back()->with('success', '评论成功');
 	}
-	
+
 	//搜索
 	public function search(Request $request)
 	{
