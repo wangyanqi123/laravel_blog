@@ -12,9 +12,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use App\Handlers\Level;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Cache;
 
 class Article extends Model
 {
+    protected static $cache_key = 'lara:article';
+
+    protected static $expire_at = 20;
+
 	protected $fillable = [
 		'title', 'content', 'user_id' ,'category_id', 'keyword', 'description', 'thumb', 'status', 'views'
 	];
@@ -58,7 +63,10 @@ class Article extends Model
 	//热门文章
 	public static function getHot($limit = 10)
 	{
-		return self::where('status', 1)->orderBy('views', 'desc')->limit($limit)->get();
+        $list = Cache::remember(self::$cache_key, self::$expire_at, function (){
+            return self::where('status', 1)->orderBy('views', 'desc')->limit($limit)->get();
+        });
+		return $list;
 	}
 
 	//归档
