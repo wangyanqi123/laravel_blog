@@ -28,7 +28,6 @@ class Setting extends Model
 		$list = Cache::remember(self::$cache_key, self::$expire_at, function (){
 			return self::all();
 		});
-
 		if(empty($list)){
 			return [];
 		}
@@ -43,10 +42,10 @@ class Setting extends Model
 				$settings[$val['name']] = $val['value'];
 			}
 		}
-		
+
 		return $settings;
 	}
-	
+
 	//更新配置
 	public static function addOrUpdate($info, $type = 'main')
 	{
@@ -69,9 +68,9 @@ class Setting extends Model
 				$setting->update($data);
 			}
 		}
-		
+
 		Cache::forget(self::$cache_key);
-		
+
 		return true;
 	}
 }
