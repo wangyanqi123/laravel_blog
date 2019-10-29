@@ -63,7 +63,7 @@ class Article extends Model
 	//热门文章
 	public static function getHot($limit = 10)
 	{
-        $list = Cache::remember(self::$cache_key, self::$expire_at, function ($limit){
+        $list = Cache::remember(self::$cache_key, self::$expire_at, function ($limit = 10){
             return self::where('status', 1)->orderBy('views', 'desc')->limit($limit)->get();
         });
 		return $list;
