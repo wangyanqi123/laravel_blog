@@ -28,26 +28,9 @@ class IndexController extends BaseController
         ///Redis::set('name', 'guwenjie');
         //$values = Redis::get('article_1');
         //echo $values;
-        $urls = array(
-            'http://www.wangyanqi.cc/article/11',
-            'http://www.wangyanqi.cc/article/6',
-        );
-        $api     = 'http://data.zz.baidu.com/urls?site=www.wangyanqi.cc&token=n1MZ4b6510afqDNl';
-        $ch      = curl_init();
-        $options = array(
-            CURLOPT_URL            => $api,
-            CURLOPT_POST           => true,
-            CURLOPT_RETURNTRANSFER => true,
-            CURLOPT_POSTFIELDS     => implode("\n", $urls),
-            CURLOPT_HTTPHEADER     => array('Content-Type: text/plain'),
-        );
-        curl_setopt_array($ch, $options);
-        $result = curl_exec($ch);
-        echo $result;
-
-		$list = Article::getRecent();
-		return view('index.index', ['list' => $list]);
-	}
+        $list = Article::getRecent();
+        return view('index.index', ['list' => $list]);
+    }
 
     //列表
     public function category(Category $category, Level $level)
@@ -125,5 +108,31 @@ class IndexController extends BaseController
     {
         $data = Post::getSearch($request);
         return view('index.search', $data);
+    }
+
+    public function submit()
+    {
+        $arr = Article::all();
+        $urls = [];
+        foreach ($arr as $key => $value)
+        {
+            $urls[] = $value->title;
+        }
+        /*$urls    = array(
+            'http://www.wangyanqi.cc/article/11',
+            'http://www.wangyanqi.cc/article/6',
+        );*/
+        $api     = 'http://data.zz.baidu.com/urls?site=www.wangyanqi.cc&token=n1MZ4b6510afqDNl';
+        $ch      = curl_init();
+        $options = array(
+            CURLOPT_URL            => $api,
+            CURLOPT_POST           => true,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_POSTFIELDS     => implode("\n", $urls),
+            CURLOPT_HTTPHEADER     => array('Content-Type: text/plain'),
+        );
+        curl_setopt_array($ch, $options);
+        $result = curl_exec($ch);
+        echo $result;
     }
 }

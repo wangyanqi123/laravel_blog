@@ -8,6 +8,7 @@ Route::get('article/{article}', 'IndexController@article')->name('article');
 Route::get('tag/{tag}', 'IndexController@search')->name('tag');
 Route::get('time/{time}', 'IndexController@search')->name('time');
 Route::get('search/{keyword}', 'IndexController@search')->name('search');
+Route::get('submit', 'IndexController@submit')->name('submit');
 
 Route::group([
 	'middleware' => 'guest',
