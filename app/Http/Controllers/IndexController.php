@@ -116,10 +116,11 @@ class IndexController extends BaseController
         $urls = [];
         foreach ($arr as $key => $value)
         {
-            $urls[] = $value->title;
+            $id = $value->id;
+            $urls[] = 'http://www.wangyanqi.cc/article/' + $id;
         }
         /*$urls    = array(
-            'http://www.wangyanqi.cc/article/11',
+            '11',
             'http://www.wangyanqi.cc/article/6',
         );*/
         $api     = 'http://data.zz.baidu.com/urls?site=www.wangyanqi.cc&token=n1MZ4b6510afqDNl';
