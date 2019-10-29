@@ -166,7 +166,7 @@
 <script type="text/javascript">
 	$(function (){
 		$("#searchsubmit").click(function (){
-			location.href = "{{ route('home') }}" + "/search/"+$("#s").val()+'.html';
+			location.href = "{{ route('home') }}" + "/search/"+$("#s").val();
 			return false;
 		});
 	});
