@@ -35,11 +35,11 @@ class IndexController extends BaseController
         $api     = 'http://data.zz.baidu.com/urls?site=www.wangyanqi.cc&token=n1MZ4b6510afqDNl';
         $ch      = curl_init();
         $options = array(
-             CURLOPT_URL            => $api,
-             CURLOPT_POST           => true,
-             CURLOPT_RETURNTRANSFER => true,
-             CURLOPT_POSTFIELDS     => implode("\n", $urls),
-             CURLOPT_HTTPHEADER     => array('Content-Type: text/plain'),
+            CURLOPT_URL            => $api,
+            CURLOPT_POST           => true,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_POSTFIELDS     => implode("\n", $urls),
+            CURLOPT_HTTPHEADER     => array('Content-Type: text/plain'),
         );
         curl_setopt_array($ch, $options);
         $result = curl_exec($ch);
