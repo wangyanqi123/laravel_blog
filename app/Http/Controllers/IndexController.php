@@ -117,7 +117,7 @@ class IndexController extends BaseController
         foreach ($arr as $key => $value)
         {
             $id = $value->id;
-            $urls[] = 'http://www.wangyanqi.cc/article/' + $id;
+            $urls[] = 'http://www.wangyanqi.cc/article/'.$id;
         }
         /*$urls    = array(
             '11',
