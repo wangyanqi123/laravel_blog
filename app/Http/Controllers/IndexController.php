@@ -114,11 +114,13 @@ class IndexController extends BaseController
     {
         $arr = Article::all();
         $urls = [];
+        $urls[] = 'http://www.wangyanqi.cc';
         foreach ($arr as $key => $value)
         {
             $id = $value->id;
             $urls[] = 'http://www.wangyanqi.cc/article/'.$id;
         }
+        print_r($urls);
         /*$urls    = array(
             '11',
             'http://www.wangyanqi.cc/article/6',
