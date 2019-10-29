@@ -1,5 +1,5 @@
 <?php
-echo 33;exit;
+
 /**
  * Laravel - A PHP Framework For Web Artisans
  *

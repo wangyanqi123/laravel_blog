@@ -28,7 +28,6 @@ class IndexController extends BaseController
         ///Redis::set('name', 'guwenjie');
         //$values = Redis::get('article_1');
         //echo $values;
-        echo 323;exit;
 		$list = Article::getRecent();
 		return view('index.index', ['list'=> $list]);
 	}
