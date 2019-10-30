@@ -834,7 +834,7 @@ article.sticky .featured-post {
 .ql-editor code {
 	font-size: 14px;
 	padding: 1px 4px;
-	background: #fff !important;
+	/*background: #fff !important;*/
 	color: #333 !important;
 }
 
