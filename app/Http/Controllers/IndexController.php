@@ -30,7 +30,7 @@ class IndexController extends BaseController
         //echo $values;
         //$list = Article::getRecent();
         $list = Article::where('status', 1)->orderBy('id', 'desc')->paginate(10);
-        return view('index.index', ['list' => $list]);
+        return view('index.index', compact('list'));
     }
 
     //列表
