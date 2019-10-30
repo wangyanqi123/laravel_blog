@@ -10,6 +10,7 @@
 			white-space:-pre-wrap; /* Opera 4-6 */
 			white-space:-o-pre-wrap; /* Opera 7 */
 			word-wrap:break-word; /* Internet Explorer 5.5+ */
+            background: #2d2d2d;
 		}
 		 pre code {
 			display: block;
