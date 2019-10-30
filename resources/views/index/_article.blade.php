@@ -17,4 +17,3 @@
 </article>
 @endforeach
 {{ $list->links() }}
-{!! $list->render(new \App\Http\Controllers\ShmilyThreePresenter($list)) !!}
