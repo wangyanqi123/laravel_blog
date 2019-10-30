@@ -16,4 +16,4 @@
 	@include('index._tag', ['val'=> $val])
 </article>
 @endforeach
-{{ $list-->links() }}
+{{ $list->links() }}
