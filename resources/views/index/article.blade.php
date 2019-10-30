@@ -19,8 +19,13 @@
 			word-wrap: normal;
 			border-radius: 4px;
 			padding: 8px;
-			 background: #2d2d2d;
 		}
+        .ql-editor code {
+            font-size: 14px;
+            padding: 1px 4px;
+            /* background: #fff !important; */
+            /*color: #333 !important;*/
+        }
 	</style>
 
 	<article>
