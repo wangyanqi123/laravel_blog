@@ -15,4 +15,5 @@
 	
 	@include('index._tag', ['val'=> $val])
 </article>
+{{ $list-->links() }}
 @endforeach

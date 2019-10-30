@@ -57,7 +57,7 @@ class Article extends Model
 	//最新文章
 	public static function getRecent($limit = 10)
 	{
-		return self::where('status', 1)->orderBy('id', 'desc')->limit($limit)->get();
+		return self::where('status', 1)->orderBy('id', 'desc')->paginate($limit);
 	}
 	
 	//热门文章
