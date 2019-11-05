@@ -13,9 +13,9 @@
 	<title>
 		{{--@yield('title', '首页') - --}}
 		@if(substr($_SERVER['REMOTE_ADDR'],0,10) == '116.231.91')
-			{{$cfg->title}}
+			{{$cfg->two_title}}
 			@else
-			@yield('title', '王延琦技术博客')
+			@yield('title')
 			@endif
 		{{--{{ $cfg->title }}--}}
 	</title>

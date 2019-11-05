@@ -1,6 +1,6 @@
 
 @extends('layouts.main')
-@section('title', '王延琦技术博客')
+@section('title', $cfg->title)
 
 @section('content')
 	@include('index._article', ['list'=> $list])
