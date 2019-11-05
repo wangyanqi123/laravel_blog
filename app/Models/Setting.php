@@ -20,7 +20,7 @@ class Setting extends Model
 
 	protected static $cache_key = 'lara:settings';
 
-	protected static $expire_at = 120;
+	protected static $expire_at = 1;
 
 	//获取系统配置
 	public static function getAll($type = '')
