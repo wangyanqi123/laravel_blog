@@ -14,9 +14,9 @@
 		{{--@yield('title', '首页') - --}}
 		@if(substr($_SERVER['REMOTE_ADDR'],0,10) == '116.231.91')
 			{{$cfg->two_title}}
-			@else
+		@else
 			@yield('title')
-			@endif
+		@endif
 		{{--{{ $cfg->title }}--}}
 	</title>
 	<meta name="keywords" content="{{ $cfg->keyword }}"/>
@@ -40,7 +40,11 @@
 	<header id="masthead" class="site-header" role="banner">
 		<hgroup>
 			<h1 class="site-title">
-				<a href="{{ route('home') }}" title="{{ $cfg->name }}" rel="home">{{ $cfg->name }}</a>
+				@if(substr($_SERVER['REMOTE_ADDR'],0,10) == '116.231.91')
+					<a href="{{ route('home') }}" title="{{ $cfg->two_name }}" rel="home">{{ $cfg->two_name }}</a>
+				@else
+					<a href="{{ route('home') }}" title="{{ $cfg->name }}" rel="home">{{ $cfg->name }}</a>
+				@endif
 				@auth
 				@if(Auth::user()->role_id == 1)
 					<input type="button" class="btn-default" value="管理" title="{{ Auth::user()->username }}" onclick="location.href = '{{ route('admin.dashboard.index') }}';">
