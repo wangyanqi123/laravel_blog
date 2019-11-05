@@ -25,7 +25,9 @@ class Setting extends Model
 	//获取系统配置
 	public static function getAll($type = '')
 	{
-		$list = self::all();
+		$list = Cache::remember(self::$cache_key, self::$expire_at, function (){
+			return self::all();
+		});
 		if(empty($list)){
 			return [];
 		}
