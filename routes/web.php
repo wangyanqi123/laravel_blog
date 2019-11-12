@@ -9,7 +9,7 @@ Route::get('tag/{tag}', 'IndexController@search')->name('tag');
 Route::get('time/{time}', 'IndexController@search')->name('time');
 //Route::get('search/{keyword}', 'IndexController@search')->name('search');
 Route::get('/search/{keyword}', function (Request $request) {
-    return App\Models\Article::search($request->search)->get();
+    return App\Models\Article::search($request->keyword)->get();
 });
 Route::get('submit', 'IndexController@submit')->name('submit');
 
