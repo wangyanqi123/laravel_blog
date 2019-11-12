@@ -108,6 +108,7 @@ class IndexController extends BaseController
     public function search(Request $request)
     {
         $list = Article::search($request->keyword)->get();
+        dd($list);
         //$data = Article::getSearch($request);
         return view('index.search', $list);
     }
