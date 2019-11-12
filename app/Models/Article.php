@@ -13,9 +13,12 @@ use Illuminate\Database\Eloquent\Model;
 use App\Handlers\Level;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Cache;
+use Laravel\Scout\Searchable;
 
 class Article extends Model
 {
+    use Searchable;
+
     protected static $cache_key = 'lara:article';
 
     protected static $expire_at = 20;
@@ -23,7 +26,33 @@ class Article extends Model
 	protected $fillable = [
 		'title', 'content', 'user_id' ,'category_id', 'keyword', 'description', 'thumb', 'status', 'views'
 	];
-	
+
+    /**
+     * Get the index name for the model.
+     *
+     * @return string
+     */
+
+    public function searchableAs()
+    {
+        return 'posts_index';
+    }
+
+    /**
+     * Get the indexable data array for the model.
+     *
+     * @return array
+     */
+
+    public function toSearchableArray()
+    {
+        $array = $this->toArray();
+
+        // Customize array...
+
+        return $array;
+    }
+
 	//所属分类
 	public function category()
 	{
