@@ -107,7 +107,7 @@ class IndexController extends BaseController
     //搜索
     public function search(Request $request)
     {
-        $data = Article::search($request->keyword)->get();
+        $list = Article::search($request->keyword)->get();
         //$data = Article::getSearch($request);
         return view('index.search', $data);
     }
