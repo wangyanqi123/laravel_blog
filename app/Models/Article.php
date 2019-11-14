@@ -49,8 +49,8 @@ class Article extends Model
         $array = $this->toArray();
 
         // Customize array...
-        //return array_only($this->toArray(),['id','title']);
-        return $this->toArray();
+        return array_only($this->toArray(),['id','title','category_id','keywords','description','content','click','thumb','created_at','updated_at','status','views']);
+        //return $this->toArray();
     }
 
 	//所属分类
