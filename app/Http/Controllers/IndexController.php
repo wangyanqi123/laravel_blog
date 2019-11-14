@@ -115,9 +115,9 @@ class IndexController extends BaseController
     //修改测试搜索
     public function edit(Request $request, $id)
     {
-        echo $id;exit;
         $article = Article::where('id','=',$id)->first();
-        dd($article);
+        $article -> title = 'Redis 持久化之RDB和AOF11';
+        $article ->save();
     }
 
     public function submit()
