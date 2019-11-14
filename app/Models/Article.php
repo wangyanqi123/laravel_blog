@@ -47,10 +47,9 @@ class Article extends Model
     public function toSearchableArray()
     {
         $array = $this->toArray();
-
         // Customize array...
         //return array_only($this->toArray(),['id','title','category_id','keywords','description','content','click','thumb','created_at','updated_at','status','views']);
-        return $this->toArray();
+        return $array;
     }
 
 	//所属分类
