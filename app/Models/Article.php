@@ -49,8 +49,8 @@ class Article extends Model
         $array = $this->toArray();
 
         // Customize array...
-
-        return $array;
+        return array_only($this->toArray(),['id','title']);
+        //return $array;
     }
 
 	//所属分类
