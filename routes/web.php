@@ -12,11 +12,7 @@ Route::get('search/{keyword}', 'IndexController@search')->name('search');
     return App\Models\Article::search($request->keyword)->get();
 });*/
 //测试搜索
-//Route::get('article/edit', 'IndexController@edit')->name('article.edit');
-//Route::get('article/edit', 'IndexController@edit')->name('article.edit');
-Route::get('article/edit', function (Request $request) {
-    return 111;
-});
+Route::get('article/edit/{id}', 'IndexController@edit')->name('article.edit');
 Route::get('submit', 'IndexController@submit')->name('submit');
 
 Route::group([
