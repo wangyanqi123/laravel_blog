@@ -22,7 +22,6 @@ class UserController extends BaseController
 
 	public function store(UserRequest $request)
 	{
-	    echo 123;exit;
 		$user = User::add([
 			'username' => $request->username,
 			'email' => $request->email,
