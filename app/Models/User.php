@@ -84,7 +84,7 @@ class User extends Authenticatable implements JWTSubject
         if(empty($data['avatar']) && $data['email']){
             $data['avatar'] = app(App::class)->getAvatarByEmail($data['email']);
         }
-
+        $data['description'] = '1';
         return self::create($data);
     }
 
