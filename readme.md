@@ -17,17 +17,10 @@
  9. 集成Quill编辑器,支持图片上传,界面简洁美观
 
 效果：
-![image](http://book.wangyanqi.cc//img/2020-01-16/2020-01-16_1579152211_5e1ff3538b570.png)
+
+http://book.wangyanqi.cc//img/2020-01-16/2020-01-16_1579152211_5e1ff3538b570.png
   
   **后续开发计划**
   
 接下来会完善博客的功能，bug修复以及基于MUI开发博客系统的APP。
 
-
-  [1]: https://github.com/zhangfangsong/Lara
-  [2]: http://lara.zfsphp.com/
-  [3]: http://www.zfsphp.com/uploads/images/link/201909/1567661625.png
-  [4]: http://www.zfsphp.com/uploads/images/link/201909/1567661653.png
-  [5]: http://www.zfsphp.com/uploads/images/link/201909/1567661675.png
-  [6]: http://www.zfsphp.com/uploads/images/link/201909/1567661692.png
-  [7]: http://www.zfsphp.com/uploads/images/link/201909/1567661711.png
