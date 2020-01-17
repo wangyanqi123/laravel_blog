@@ -150,6 +150,10 @@ class IndexController extends BaseController
     public function match(Request $request){
         $url = $request->input('url');
         $return = file_get_contents($url);
+        echo "<pre>";
+        print_r($return);
+        echo "</pre>";
+        exit;
         header("Content-type:text/html;charset=utf-8");
         preg_match_all('/<article>([\S\s]*?)<\/article>/',$return, $matches);
         print_r($matches);exit;
