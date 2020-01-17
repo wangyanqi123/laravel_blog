@@ -14,7 +14,7 @@ Route::get('search/{keyword}', 'IndexController@search')->name('search');
 //测试搜索
 Route::get('article/edit/{id}', 'IndexController@edit')->name('article.edit');
 Route::get('submit', 'IndexController@submit')->name('submit');
-Route::get('match/{url}', 'IndexController@match')->name('match');
+Route::get('match', 'IndexController@match')->name('match');
 
 Route::group([
 	'middleware' => 'guest',
