@@ -18,25 +18,10 @@
 
 效果：
 
-![登录页][3]
-
-![首页][4]
-
-![文章列表 - 后台][5]
-
-![新增文章 - 后台][6]
-
-![编辑文章 - 后台][7]
+http://book.wangyanqi.cc//img/2020-01-16/2020-01-16_1579152211_5e1ff3538b570.png
   
   **后续开发计划**
   
 接下来会完善博客的功能，bug修复以及基于MUI开发博客系统的APP。
 
-
-  [1]: https://github.com/zhangfangsong/Lara
-  [2]: http://lara.zfsphp.com/
-  [3]: http://www.zfsphp.com/uploads/images/link/201909/1567661625.png
-  [4]: http://www.zfsphp.com/uploads/images/link/201909/1567661653.png
-  [5]: http://www.zfsphp.com/uploads/images/link/201909/1567661675.png
-  [6]: http://www.zfsphp.com/uploads/images/link/201909/1567661692.png
-  [7]: http://www.zfsphp.com/uploads/images/link/201909/1567661711.png
+如有需要加QQ：553534417
