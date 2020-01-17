@@ -148,13 +148,15 @@ class IndexController extends BaseController
     }
 
     public function match($url){
-        echo $url;exit;
         $return = file_get_contents($url);
-        echo $return;exit;
-        /*header("Content-type:text/html;charset=utf-8");
+        header("Content-type:text/html;charset=utf-8");
         preg_match_all('/<article>([\S\s]*?)<\/article>/',$return, $matches);
         preg_match_all('/<p>([\S\s]*?)<\/p>/',$return, $des);
         $posts['content'] = $matches[0][0];
-        $posts['describe'] = $des[0][0];*/
+        $posts['describe'] = $des[0][0];
+        echo $posts['content'];
+        echo "<br/>";
+        echo "&&&&";
+        echo $posts['describe'];
     }
 }
