@@ -148,6 +148,7 @@ class IndexController extends BaseController
     }
 
     public function match($url){
+        echo $url;exit;
         $return = file_get_contents($url);
         header("Content-type:text/html;charset=utf-8");
         preg_match_all('/<article>([\S\s]*?)<\/article>/',$return, $matches);
