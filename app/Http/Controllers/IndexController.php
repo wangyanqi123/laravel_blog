@@ -109,26 +109,25 @@ class IndexController extends BaseController
     {
         $list = Article::search($request->keyword)->paginate();
         //$data = Article::getSearch($request);
-        return view('index.search', ['list'=> $list]);
+        return view('index.search', ['list' => $list]);
     }
 
     //修改测试搜索
     public function edit(Request $request, $id)
     {
-        $article=Article::where('id','=',$id)->first();
-        $article->title='Redis 持久化之RDB和AOF';
+        $article        = Article::where('id', '=', $id)->first();
+        $article->title = 'Redis 持久化之RDB和AOF';
         $article->save();
     }
 
     public function submit()
     {
-        $arr = Article::all();
-        $urls = [];
+        $arr    = Article::all();
+        $urls   = [];
         $urls[] = 'http://www.wangyanqi.cc';
-        foreach ($arr as $key => $value)
-        {
-            $id = $value->id;
-            $urls[] = 'http://www.wangyanqi.cc/article/'.$id;
+        foreach ($arr as $key => $value) {
+            $id     = $value->id;
+            $urls[] = 'http://www.wangyanqi.cc/article/' . $id;
         }
         /*$urls    = array(
             '11',
@@ -149,12 +148,13 @@ class IndexController extends BaseController
     }
 
     public function match($url){
+        echo $url;exit;
         $return = file_get_contents($url);
         echo $return;exit;
-        header("Content-type:text/html;charset=utf-8");
+        /*header("Content-type:text/html;charset=utf-8");
         preg_match_all('/<article>([\S\s]*?)<\/article>/',$return, $matches);
         preg_match_all('/<p>([\S\s]*?)<\/p>/',$return, $des);
         $posts['content'] = $matches[0][0];
-        $posts['describe'] = $des[0][0];
+        $posts['describe'] = $des[0][0];*/
     }
 }
