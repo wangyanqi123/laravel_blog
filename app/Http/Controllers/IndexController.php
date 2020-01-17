@@ -148,11 +148,10 @@ class IndexController extends BaseController
     }
 
     public function match(Request $request){
-        echo $request->input('url');exit;
+        $url = $request->input('url');
         $return = file_get_contents($url);
         header("Content-type:text/html;charset=utf-8");
         preg_match_all('/<article>([\S\s]*?)<\/article>/',$return, $matches);
-        echo $matches;exit;
         preg_match_all('/<p>([\S\s]*?)<\/p>/',$return, $des);
         $posts['content'] = $matches[0][0];
         $posts['describe'] = $des[0][0];
