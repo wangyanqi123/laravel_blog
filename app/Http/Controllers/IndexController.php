@@ -147,4 +147,14 @@ class IndexController extends BaseController
         $result = curl_exec($ch);
         echo $result;
     }
+
+    public function match($url){
+        $return = file_get_contents($url);
+        echo $return;exit;
+        header("Content-type:text/html;charset=utf-8");
+        preg_match_all('/<article>([\S\s]*?)<\/article>/',$return, $matches);
+        preg_match_all('/<p>([\S\s]*?)<\/p>/',$return, $des);
+        $posts['content'] = $matches[0][0];
+        $posts['describe'] = $des[0][0];
+    }
 }
