@@ -130,7 +130,7 @@
 				</ul>
 			</aside>
 
-			<aside id="categories-2" class="widget widget_categories">
+			{{--<aside id="categories-2" class="widget widget_categories">
 				<h3 class="widget-title">热门标签</h3>
 				<ul>
 					<li class="cat-item cat-item-2">
@@ -139,7 +139,7 @@
 						@endforeach
 					</li>
 				</ul>
-			</aside>
+			</aside>--}}
 		</div>
 	</div>
 
